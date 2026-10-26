@@ -1647,7 +1647,6 @@
         playlistEl.appendChild(item);
     });
 }
-
         function getUpcomingIndex(currentIndex) {
             const filtered = getFilteredIndices(); if (filtered.length === 0) return currentIndex; if (playbackMode === 1) return currentIndex; 
             if (playbackMode === 2) return filtered[Math.floor(Math.random() * filtered.length)]; 

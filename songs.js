@@ -4,6 +4,7 @@
             {
                 title: "01 - El Me Liberó",
                 artist: "Ministerio Restauración",
+				allowDownload: true,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/e4m3wxqbn8s3xgqm6wzj8/01-El-Me-Liber.pdf?rlkey=9l2hxhromowfuz896pq560ay1&st=98mild0q&dl=0",
@@ -15,6 +16,7 @@
             {
                 title: "02 - Su Cordero Ha Mandado",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/8kg0g08a9yvkd4rsgerm0/02-Su-Cordero-Ha-Mandado.pdf?rlkey=kp845wql5lws8x7tgbm2db7ip&st=5czi8941&dl=0",
@@ -28,6 +30,7 @@
             {
                 title: "03 - Alabaré",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/i96ornjscing636zdipxf/03-Alabar.pdf?rlkey=jdvupf1r8x6qbvh66vmcb4zn3&st=zmschy5w&dl=0",

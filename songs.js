@@ -4,7 +4,7 @@
             {
                 title: "01 - El Me Liberó",
                 artist: "Ministerio Restauración",
-				allowDownload: true,
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/e4m3wxqbn8s3xgqm6wzj8/01-El-Me-Liber.pdf?rlkey=9l2hxhromowfuz896pq560ay1&st=98mild0q&dl=0",
@@ -42,6 +42,7 @@
             {
                 title: "04 - Eres Música Y Palabras",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/yed6q6ll8b4s6gfm5jkcj/04-Eres-M-sica-Y-Palabras.pdf?rlkey=sii9ycqobc5kia9sxw1vc0yoh&st=eakkc5q8&dl=0",
@@ -53,6 +54,7 @@
             {
                 title: "05 - Llamando Al Pródigo",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/iq150uokr3dszi891zesm/05-Llamando-Al-Pr-digo.pdf?rlkey=ckp32g0yxouewvzra8ttldysy&st=3v2jrjp6&dl=0",
@@ -64,6 +66,7 @@
             {
                 title: "06 - Sofonías 3:17",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/j9qr7cvmb4u958jfvjsju/06-Sofon-as-3-17.pdf?rlkey=izqae4sgcun3ry94v2l8s417r&st=du3klabl&dl=0",
@@ -75,6 +78,7 @@
             {
                 title: "07 - Soy Tu Ofrenda",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/bhgss47etitrm18p9gzm0/07-Soy-Tu-Ofrenda.pdf?rlkey=s3dojwi9koen1zaduzp7njd9g&st=svx268hs&dl=0",
@@ -86,6 +90,7 @@
             {
                 title: "08 - Oh Ven A La Iglesia",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/d50rmmnntsxcttgqu37zt/08-OH-Ven-A-La-Iglesia.pdf?rlkey=wrhvdcmfc28a0fwn1wth4i354&st=3mpen5s1&dl=0",
@@ -97,6 +102,7 @@
             {
                 title: "09 - Pues Si Vivimos",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/3hu9ywz8l9f177xzaidcd/09-Pues-Si-Vivimos.pdf?rlkey=pvln0rpk0cdjw8nonhy6rlbv8&st=5433fmcn&dl=0",
@@ -108,6 +114,7 @@
             {
                 title: "10 - Solo QUiero Estar Donde Tú Estás",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/7cvi83x3uud55sxtxefaa/10-Solo-QUiero-Estar-Donde-T-Est-s.pdf?rlkey=0z4df5p6794xxm1829atxcudy&st=r1udotnb&dl=0",
@@ -119,6 +126,7 @@
             {
                 title: "11 - Jesus Señor Y Salvador",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/sn3jrzhnw2ua2dn42c35e/11-Jesus-Se-or-Y-Salvador.pdf?rlkey=xebvwo474rdfpp6s3we4hnp66&st=9iixo3dk&dl=0",
@@ -130,6 +138,7 @@
             {
                 title: "12 - Vive En Mí",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/x2vm55rehqbdihp68tjoj/12-Vive-En-M.pdf?rlkey=oljiwmcudge1748pgzkuxtgor&st=ab20mj5c&dl=0",
@@ -141,6 +150,7 @@
             {
                 title: "13 - Tal Como Soy",
                 artist: "Ministerio Restauración",
+				allowDownload: false,
                 temas: [],
 				// ¡NUEVO!: Añade aquí el enlace a tu imagen o tu PDF. 
         		partitura: "https://www.dropbox.com/scl/fi/q2h57is272ws64zt6bz9n/13-Tal-Como-Soy.pdf?rlkey=umzi6curtibfm6yqe3ihet7fj&st=j74e9fjm&dl=0",

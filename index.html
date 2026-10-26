@@ -1587,9 +1587,8 @@
         const isDownloaded = localStorage.getItem('downloaded_' + song.src) === 'true'; 
         const isFav = localStorage.getItem('fav_' + song.src) === 'true';
 
-        // 1. Verificamos si la canción permite descarga
+        // 1. Verificamos si la canción permite descarga (si no existe la propiedad, asume true)
         const canDownload = song.allowDownload !== false;
-        const mostrarDescarga = canDownload && !isDownloaded;
 
         const favButtonHtml = `<button class="action-list-btn fav-btn ${isFav ? 'active' : ''}" onclick="toggleFav(event, ${index})" title="Favorito"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>`;
         
@@ -1597,40 +1596,37 @@
         const tieneReferencias = song.references && song.references.length > 0;
         const tienePartitura = !!song.partitura;
         const tieneTemas = song.temas && song.temas.length > 0;
-        
-        // Condición clave: ¿Hay algo que mostrar en el menú de 3 puntos en móvil?
-        const tieneMasOpcionesMobile = tieneReferencias || tienePartitura || tieneTemas || mostrarDescarga;
-        // Para PC (escritorio), la descarga va por fuera, así que las "más opciones" son solo si hay extras
-        const tieneMasOpcionesDesktop = tieneReferencias || tienePartitura || tieneTemas;
+        const tieneMasOpciones = tieneReferencias || tienePartitura || tieneTemas;
 
-        const refButtonHtml = (tieneReferencias || tienePartitura || tieneTemas) 
-            ? `<button class="action-list-btn stroke-icon" onclick="openRefModal(event, ${index})" title="Ver Detalles">${iconBookSvg}</button>`
+        const refButtonHtml = tieneMasOpciones 
+            ? `<button class="action-list-btn stroke-icon" onclick="openRefModal(event, ${index})" title="Ver en otros Himnarios">${iconBookSvg}</button>`
             : '';
             
         const projectButtonHtml = song.partitura 
             ? `<button class="action-list-btn stroke-icon project-btn-desktop" onclick="openProjection(event, ${index})" title="Proyectar Partitura">${iconProjectSvg}</button>` 
             : '';
 
-        // Botones de descarga según la vista y si está habilitada
-        const standardDownloadBtn = mostrarDescarga 
-            ? `<button class="action-list-btn" onclick="downloadSongFile(event, ${index})" title="Descargar MP3">${iconDownloadSvg}</button>` : '';
+        // 2. Agregamos '!canDownload' a las condiciones para ocultar el botón si la canción lo restringe
+        const standardDownloadBtn = (isDownloaded || !canDownload) 
+            ? '' : `<button class="action-list-btn" onclick="downloadSongFile(event, ${index})" title="Descargar MP3">${iconDownloadSvg}</button>`;
             
-        const desktopOnlyDownloadBtn = mostrarDescarga 
-            ? `<button class="action-list-btn btn-hide-mobile" onclick="downloadSongFile(event, ${index})" title="Descargar MP3">${iconDownloadSvg}</button>` : '';
+        const desktopOnlyDownloadBtn = (isDownloaded || !canDownload) 
+            ? '' : `<button class="action-list-btn btn-hide-mobile" onclick="downloadSongFile(event, ${index})" title="Descargar MP3">${iconDownloadSvg}</button>`;
             
-        const mobileOnlyDownloadBtn = mostrarDescarga 
-            ? `<button class="action-list-btn more-options-btn" onclick="downloadSongFile(event, ${index})" title="Descargar MP3">${iconDownloadSvg}</button>` : '';
+        const mobileOnlyDownloadBtn = (isDownloaded || !canDownload) 
+            ? '' : `<button class="action-list-btn more-options-btn" onclick="downloadSongFile(event, ${index})" title="Descargar MP3">${iconDownloadSvg}</button>`;
 
-        // Si NO hay referencias/extras Y la descarga está deshabilitada, ocultar los 3 puntos
-        const dotsButtonHtml = tieneMasOpcionesMobile 
+        const dotsButtonHtml = tieneMasOpciones 
             ? `<button class="action-list-btn more-options-btn" onclick="toggleOptionsMenu(event, ${index})" title="Opciones">${iconDotsSvg}</button>`
             : '';
 
-        // En el menú flotante móvil, se incluyen las referencias y la descarga (si están habilitadas)
-        const popupActionsHtml = tieneMasOpcionesMobile ? `${refButtonHtml} ${projectButtonHtml} ${mobileOnlyDownloadBtn}` : '';
+        // En el menú flotante, ponemos el botón de descarga que SOLO se ve en el celular
+        const popupActionsHtml = tieneMasOpciones ? `${refButtonHtml} ${projectButtonHtml} ${mobileOnlyDownloadBtn}` : '';
         
         // En la barra principal armamos [Favorito] [Descargar]. 
-        const mainActionsHtml = tieneMasOpcionesDesktop ? `${favButtonHtml} ${desktopOnlyDownloadBtn}` : `${favButtonHtml} ${standardDownloadBtn}`;
+        // En PC siempre se verán ambos. 
+        // En Celular, si hay más opciones, el 'desktopOnlyDownloadBtn' se ocultará mágicamente para no duplicarse con el del menú.
+        const mainActionsHtml = tieneMasOpciones ? `${favButtonHtml} ${desktopOnlyDownloadBtn}` : `${favButtonHtml} ${standardDownloadBtn}`;
 
         item.innerHTML = `
             <div class="song-info-list" onclick="selectSong(${index})">
